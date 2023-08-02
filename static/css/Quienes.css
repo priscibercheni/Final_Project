@@ -1,0 +1,81 @@
+.contenedor{
+background-color:rgba(0,0,0,0.15);
+height: 150hv;
+margin: 1%;
+display: flex ;
+flex-direction: column;
+justify-content: center;
+align-items:  	center;
+}
+
+.tituloquienes {
+    margin: 0 30px 30px;
+}
+#mapa{
+    padding: 10px 500px 20px;
+}
+.txtoquienes{
+    margin: 0 30px 30px;
+    font-size: medium;
+}
+
+.subquienes{
+    margin: 0 30px 30px;
+}
+ul {
+    list-style: none;
+}
+.txtquienes2{ 
+    margin: 10px 30px 50px
+}
+p {
+    font-size: larger;
+}
+
+.banner3{
+    
+    
+    background: green;
+}
+.banner2{
+    background: rgb(125,124,123);
+    
+}
+.banner{
+    background: whitesmoke;
+
+}
+.contenedorfooter{
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.p-2.contacto{
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.p-2.ubicacion{
+    display: flex !important; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.p-2.redes{
+    display: flex !important; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+.dropmenu{
+    position:relative;
+    top: 5px;
+    left:-20px;
+    width: 50px;
+    height: 50px;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}

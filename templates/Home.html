@@ -1,0 +1,47 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+<main >
+    <div class="banner">
+        <div class="p-4 p-md-5 mb-4 rounded"  >
+        <div class="col-md-12 px-0">
+            <h1 class="display-12 fst-italic"> Nuestra Misión</h1>
+
+        <h1 class="display-12 fst-italic">Ser partícipes del desarrollo cultural, brindar oportunidades, capacitación del Arte y hacer del mismo un atractivo turístico.</h1>
+        </div>
+        </div>
+    </div>
+
+    <div class="row pb-4 p-4">
+    {% for post in ultima_noticias %}
+    <div class="p-1 p-md-6  col-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-1 shadow-sm h-md-250 position-relative">
+        <div class="col-md-8 p-3 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Noticias</strong>
+            <h3 class="mb-0">{{post.titulo}}</h3>
+            <div class="mb-1 text-muted">{{ post.fecha }}</div>
+            <p class="mb-auto">{{ post.contenido | truncatechars:50|safe }} <span>
+                {% if post.categoria.id == 1%}
+                    <a href="{% url 'noticias:listararte.html'%}" class="stretched-link">Ir a Noticias</a>
+                {% else %}
+                <a href="{% url 'noticias:listarturismo.html'%}" class="stretched-link">Ir a Noticias</a>
+                {% endif %}
+            </span></p>
+            
+        </div>
+        <div class="col-4 d-none d-lg-block">
+        
+            <img src="{{ post.imagen.url }}" class="card-img-top" max-width="300px" height="250px" style="border-radius: 15px; padding-top: 0px;">    
+        </div>
+        </div>
+    </div>
+    {%endfor%}
+    </div>
+
+{%endblock contenido%}
+
+
+
+

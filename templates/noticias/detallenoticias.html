@@ -1,0 +1,34 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+
+
+    <form method="POST">
+        {% csrf_token %}
+        {{comment_form.as_p}}
+        <input type="submit" name="comment" class="btn btn-warning">
+        
+    </form>    
+    
+    <div class="main-comment-section">
+        {{comments.count}} Comment{{comments|pluralize}}
+    </div>
+    
+    {% for comment in comments %}
+        <blockquote class="blockquote">
+        <p>{{ comment.content}}</p>
+        <footer class="blockquote-footer">
+            By <cite>{{comment.user|capfirst}}
+    
+            
+            <a href="{% url 'noticias:socio_comment' comment.id %}" style="color: #585858;">Borrar<i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            
+          
+            </cite> 
+        </footer>
+        </blockquote>
+    {% endfor %}
+
+    {%endblock contenido%}

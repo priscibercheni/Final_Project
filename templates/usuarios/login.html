@@ -1,0 +1,13 @@
+{% extends 'basetemplate.html' %}
+
+{% block contenido %}
+			<form method="POST" class="container" style=" width: 60vw;   height: 80vh;margin-top: 40px;">{%csrf_token%}
+				{{form.errors}}
+				<label class="form-label mt-5" for="username">Usuario:</label>
+				<input class="form-control" type="text" name="username" placeholder="USUARIO">
+				<label class="form-label mt-5" for="password">Contraseña:</label>
+				<input class="form-control"type="password" name="password" placeholder="PASSWORD">
+
+				<input class="btn btn-primary my-3" type="submit" name="" value="ENVIAR">
+			</form>
+{% endblock %}

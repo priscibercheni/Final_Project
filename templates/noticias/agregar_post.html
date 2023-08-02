@@ -1,0 +1,18 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+<h1 style="text-align:center;">Agregar Posteo</h1>
+<br/>
+<div class="form-group">
+<form method="post" class="container" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <br/>
+    
+    <button type="submit" class="btn btn-primary" id="mail">Agregar</button>
+</form>
+</div>
+{%endblock contenido%}
