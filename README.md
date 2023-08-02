@@ -1,2 +1,2 @@
-INFORMATORIO ETAPA 2/n
+INFORMATORIO ETAPA 2
 Proyecto final Blog 
