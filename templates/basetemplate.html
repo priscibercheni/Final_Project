@@ -104,17 +104,18 @@
                 </div> {% endcomment %}
         
                 <div class="col-8 text-center">
-                    <h1 class="blog-header-logo text-dark">Fundación Amigos del Arte y Turismo </h1>
+                    <h1 class="blog-header-logo text-dark">StreamTech: Explorando el Mundo del Streaming </h1>
                 </div>
 
                 <div class="col-4 d-flex justify-content-end align-self-start g-col-4">
                     {% if user.is_authenticated %}
-                        <strong>Hola {{ user.username }}</strong>
-			                <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">LOGOUT</a>
-		            {% else %}
-                            <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'login' %}">LOGIN</a>
-                            <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'usuarios:registro' %}">Registrar</a>
-		            {% endif %}
+                        <strong>¡Bienvenido {{ user.username }}!</strong>
+                        <div class="mt-2"></div> <!-- Elemento div para crear un espacio vertical -->
+                        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">LOGOUT</a>
+                    {% else %}
+                        <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'login' %}">LOGIN</a>
+                        <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'usuarios:registro' %}">Registrar</a>
+                    {% endif %}
                 </div>
             </div>
         </header>
@@ -123,13 +124,13 @@
     <div class="navbar-nav py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
             <div class=".contenedor_lat"></div>
-                <a class="p-2 link-secondary" href="{% url 'Home'%}"><b>Inicio</b></a>
-                <a class="p-2 link-secondary" href="{% url 'Quienes'%}"><b>Quienes Somos</b></a>
+                <a class="p-2 link-secondary" href="{% url 'Home'%}"><b>Home</b></a>
+                <a class="p-2 link-secondary" href="{% url 'Quienes'%}"><b>Más Sobre Nosotros</b></a>
                 <div class="dropdown p-2">
                     <a class="p-2 link-secondary dropdown-toggle" data-bs-toggle="dropdown" href=""><b>Noticias</b></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'noticias:listararte.html'%}">Arte</a>
-                        <a class="dropdown-item" href="{% url 'noticias:listarturismo.html'%}">Turismo</a></div>
+                        <a class="dropdown-item" href="{% url 'noticias:listararte.html'%}">Componentes</a>
+                        <a class="dropdown-item" href="{% url 'noticias:listarturismo.html'%}">Streaming</a></div>
                 </div>
                 <a class="p-2 link-secondary" href="{% url 'eventos:listareventos.html'%}"><b>Eventos</b></a>
             <div class=".contenedor_lat"></div>
@@ -148,13 +149,13 @@
             </div>
             <div class="contenedorfooter">
                 <div class="p-2 ubicacion">
-                    <h5 class="fst-italic">Encuentranos Aqui:</h5>
+                    <h5 class="fst-italic">La Cueva del Streamer</h5>
                     <ol class="list-unstyled">
                         <li><a href="https://www.google.com.ar/maps/place/Fundaci%C3%B3n+Amigos+del+Arte+y+Turismo/@-25.9456008,-60.6207856,19z/data=!4m5!3m4!1s0x94404cfba5224f0b:0xbe1797f5f1777f83!8m2!3d-25.9455663!4d-60.6203754?hl=es">Ubicacion</a></li>
                     </ol>
                 </div>
             <div class="p-2 redes">
-                <h5 class="fst-italic">Nuestras Redes:</h5>
+                <h5 class="fst-italic">Siguenos!</h5>
             <ol class="list-unstyled">
                 <li><a href="mailto:info@amigosdelarteyturismo.org">Correo</a></li>
                 <li><a href="https://www.instagram.com/escultoresenelimpenetrable/" target="_blank">Instagram</a></li>

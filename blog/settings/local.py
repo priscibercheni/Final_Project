@@ -10,7 +10,12 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'proyectofinal',
+        'USER': 'root',
+        'PASSWORD': 'ohnedich616',
+        'HOST': 'localhost',   # Puedes cambiarlo si tu base de datos está en un servidor remoto
+        'PORT': '3306',            # El puerto de la base de datos (por defecto: 3306)
+    }
 }
-}
+
