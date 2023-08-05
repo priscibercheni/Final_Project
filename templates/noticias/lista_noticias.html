@@ -1,0 +1,41 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+
+
+
+
+<section id="noticias">
+    {% for post in post_noticias %}
+    <div class="tarjetitas">
+
+        <div class="imagen">
+            <img src="{{ post.imagen.url }}" alt="imagen">
+        </div>
+
+        <div class="texto">
+
+            <div class="titulo">
+                <h3>{{post.titulo}}</h3>
+                <p>{{ post.fecha }}</p>
+            </div>
+
+            <div class="contenido">
+                <p>{{ post.contenido |safe }}</p>
+            </div>
+
+            <div class="leer-mas">
+                <button href="">leer mas</button>
+            </div>
+            
+        </div>
+    </div>
+    {%endfor%}
+
+</section>
+
+
+
+{%endblock contenido%}
