@@ -1,0 +1,27 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+<section id="detalle-noticia">
+    <div class="contenedor">
+        <div class="imagen">
+            <img src="{{ evento.imagen.url }}" alt="imagen">
+        </div>
+
+        <div class="texto">
+
+            <div class="titulo">
+                <h3>{{evento.titulo}}</h3>
+                <p>{{ evento.fecha }}</p>
+            </div>
+
+            <div class="contenido">
+                <p>{{ evento.contenido |safe }}</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{%endblock contenido%}

@@ -1,0 +1,60 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+<section id="detalle-noticia">
+    <div class="contenedor">
+        <div class="imagen">
+            <img src="{{ post.imagen.url }}" alt="imagen">
+        </div>
+
+        <div class="texto">
+
+            <div class="titulo">
+                <h3>{{post.titulo}}</h3>
+                <p>{{ post.fecha }}</p>
+            </div>
+
+            <div class="contenido">
+                <p>{{ post.contenido |safe }}</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="form-comentarios">
+
+    <form method="POST">
+        <h3>Comentarios</h3>
+        {% csrf_token %}
+        {{comment_form.as_p}}
+        <input type="submit" name="comment">
+    </form>
+
+</section>
+
+<section id="comentarios">
+
+    {% for comment in comments %}
+    <blockquote>
+        <p>{{ comment.content}}</p>
+        <footer class="blockquote-footer">
+            By <cite>{{comment.user|capfirst}}
+
+
+                <a href="{% url 'noticias:socio_comment' comment.id %}" style="color: #585858;">Borrar<i
+                        class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+
+
+            </cite>
+        </footer>
+    </blockquote>
+
+    {% endfor %}
+
+</section>
+
+</section>
+{%endblock contenido%}
