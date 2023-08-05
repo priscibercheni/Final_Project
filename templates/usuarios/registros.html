@@ -1,19 +1,20 @@
 {% extends 'basetemplate.html' %}
 {% load static %}
-{% block title %}Registro{% endblock title%}
 {% block contenido %}
 
-    <main role="main">
-    <div class="container">
-        <div class="row mt-3">
-        <div class="col-md-9 mx-auto mb-5">
-            <form action="" method="post" class="container">{% csrf_token %}         
-            <h3 class="mb-4">Registro</h3>
+   
+    <div class="login">
+        <div class="wrapper">
+            <form action="" method="post">{% csrf_token %}         
+            {{form.errors}}  
+            <h1 class="titulo" href="{% url 'usuarios:registro' %}">Registro</h1>
             {{form.as_p}}
+            
             <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
+            <div class="register-link" >
+                <p>Tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
+            </div>
             </form>
         </div>
         </div>
-    </div>
-    </main>
-    {%endblock contenido%}
+{%endblock contenido%}
