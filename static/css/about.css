@@ -1,0 +1,41 @@
+#about {
+    color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    align-items: center;
+}
+
+#about .titulo-principal {
+    padding: 0 0 500px 0;
+}
+
+#about .titulo-principal h1 {
+    text-shadow: rgb(152, 87, 172) 1px 0 10px;
+}
+
+
+#about blockquote {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#about blockquote h1 {
+    font-size: 3.2rem;
+}
+
+#about blockquote h3 {
+    font-size: 3rem;
+}
+
+#about blockquote p {
+    line-height: 40px;
+    width: 70%;
+    font-size: 1.3rem;
+    margin: 0 0 0 25px;
+}
+
+
+

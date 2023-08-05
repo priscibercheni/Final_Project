@@ -1,175 +1,68 @@
-{% load static%}
+{% load static %}
+<script type="text/javascript" src="{% static " ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static " ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.104.2">
+
+    <title>Tecno News</title>
+    <link rel="stylesheet" href="{% static '\css\style.css' %}">
+    <link rel="stylesheet" href="{% static '\css\Quienes.css' %}">
+    <link rel="stylesheet" href="{% static '\css\Login.css' %}">
+    <link rel="stylesheet" href="{% static '\css\noticias.css' %}">
+    <link rel="stylesheet" href="{% static '\css\about.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="nav">
+            <div class="logo">
+                <img src="{% static '\img\logo.png' %}" alt="">
+            </div>
+            <div class="items">
+                <ul>
 
 
-    <!doctype html>
-    <html lang="EN"> 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <!-- <meta name="author" content="Veronica Eschenmoser"> -->
-        <meta name="generator" content="Hugo 0.104.2">
-        <title>Amigos del arte y turismo</title>
-
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
-        <link rel="stylesheet" href="{%static 'css/Quienes.css'%}">
-
-        
-
-        
-
-    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-        <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-
-
-        <style>
-            .contenedor_lat{
-            display: flex ;
-            justify-content: center;
-            align-items:  	center;
-}
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-        </style>
-
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Varela+Round&display=swap" rel="stylesheet">
-    </head>
-<body class="m-4">
-        
-
-    <div class="banner3">
-        <header class="blog-header lh-1 py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                {% comment %} <div class="col-4 pt-1 ">
-                    <img class="logo" width= 220px height= 200px src="{% static '#'%}"></img>
-                </div> {% endcomment %}
-        
-                <div class="col-8 text-center">
-                    <h1 class="blog-header-logo text-dark">StreamTech: Explorando el Mundo del Streaming </h1>
-                </div>
-
-                <div class="col-4 d-flex justify-content-end align-self-start g-col-4">
-                    {% if user.is_authenticated %}
-                        <strong>¡Bienvenido {{ user.username }}!</strong>
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'lista_noticias'%}">Noticias</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'quienes_somos'%}">Nosotros</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'lista_eventos' %}">Eventos</a></li>
+                    {% comment %} <li>Eventos</li> {% endcomment %}
+                    <li>|</li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <strong>{{ user.username }}</strong>
                         <div class="mt-2"></div> <!-- Elemento div para crear un espacio vertical -->
                         <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">LOGOUT</a>
-                    {% else %}
-                        <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'login' %}">LOGIN</a>
-                        <a class="btn btn-sm btn-outline-secondary mx-2" href="{% url 'usuarios:registro' %}">Registrar</a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYZJREFUSEu1lrFKxEAQhv9ZEyG7AcHmOgVRBC18BgtbRbS0s9TCWiwF0cZGCx/ATrS4Z/ABLBQEQbQ7kMMiu3ckuYxcIIfEJJfES9qd+b+ZfzaTEBp+qGF95AJCY3ajKDolouUqRTDzqxDixJLybpiXC/A975mIVqqIJ7HM/DLtuquFgEBrzhRn7jLRQ5zMvA2i2aw4W6m4+NwOMgHMHQtYI9ftDJPZ81oh8ASiVhpSC0DAtaXU4W+xUOsrBg4mAgBwbyu1UwuQWJK0ljMD3yJaIik/Y4uYrcCYNwLmx3ZQEjDUiQC0GfgCsEHAXKkhVwCUurl/hlwCwATcTAlxQY7zHlvU7y8Eg8ExAfv/s4i5CyE2bSkfs8oPer11RFEbgErOK3VAQuxZjnNb5I1vzBExX9YCWFLaRBQWAZh5JjTmuxag1FRTQWMtmviyS9+ieF0znxGwWKWD3HWdBlQRLYodbdPGAb7WH3mvfVGFyTDzYkYdhFpvRcznVT+RpQGT8jyt0/hfxQ9Mxd8ZmIDI+gAAAABJRU5ErkJggg==" />
+                    </li></a>
                     {% endif %}
-                </div>
+                </ul>
             </div>
-        </header>
+        </section>
+
+
+        <main>
+            {% block contenido %}
+            <!-- Contenido específico para cada página que herede de esta plantilla -->
+            {% endblock contenido %}
+        </main>
+
+
     </div>
 
-    <div class="navbar-nav py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            <div class=".contenedor_lat"></div>
-                <a class="p-2 link-secondary" href="{% url 'Home'%}"><b>Home</b></a>
-                <a class="p-2 link-secondary" href="{% url 'Quienes'%}"><b>Más Sobre Nosotros</b></a>
-                <div class="dropdown p-2">
-                    <a class="p-2 link-secondary dropdown-toggle" data-bs-toggle="dropdown" href=""><b>Noticias</b></a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'noticias:listararte.html'%}">Componentes</a>
-                        <a class="dropdown-item" href="{% url 'noticias:listarturismo.html'%}">Streaming</a></div>
-                </div>
-                <a class="p-2 link-secondary" href="{% url 'eventos:listareventos.html'%}"><b>Eventos</b></a>
-            <div class=".contenedor_lat"></div>
-        </nav>
-    </div>
+</body>
 
-
-    {% block contenido%}
-
-    {% endblock contenido%}
-
-        <footer class="blog-footer">
-            
-            <div class="p-2 contacto">
-                <p class="fst-italic">Contactanos!! </p>
-            </div>
-            <div class="contenedorfooter">
-                <div class="p-2 ubicacion">
-                    <h5 class="fst-italic">La Cueva del Streamer</h5>
-                    <ol class="list-unstyled">
-                        <li><a href="https://www.google.com.ar/maps/place/Fundaci%C3%B3n+Amigos+del+Arte+y+Turismo/@-25.9456008,-60.6207856,19z/data=!4m5!3m4!1s0x94404cfba5224f0b:0xbe1797f5f1777f83!8m2!3d-25.9455663!4d-60.6203754?hl=es">Ubicacion</a></li>
-                    </ol>
-                </div>
-            <div class="p-2 redes">
-                <h5 class="fst-italic">Siguenos!</h5>
-            <ol class="list-unstyled">
-                <li><a href="mailto:info@amigosdelarteyturismo.org">Correo</a></li>
-                <li><a href="https://www.instagram.com/escultoresenelimpenetrable/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/EscultoresenelImpenetrable">Facebook</a></li>  
-            </ol> 
-            </div>
-            </div>
-            <p>
-            <a href="#" >Volver Arriba</a>
-            </p>
-        </footer>
-        
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-            
-            </body>
-        </html>
+</html>

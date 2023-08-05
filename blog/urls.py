@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from .import views
 # url login
 from django.contrib.auth import views as auth
@@ -22,24 +22,28 @@ from django.contrib.auth import views as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', views.Home , name='Home'),
-    
-    path ('Quienes/', views.Quienes , name='Quienes'),
-    
+    path('', views.Home, name='home'),
 
-    path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
-    path('logout/',auth.LogoutView.as_view(),name='logout'),
-    
-    
+    path('about/', views.quienes_somos, name='quienes_somos'),
+
+    path('eventos/', views.lista_eventos, name="lista_eventos"),
+
+    path('templates/noticias/lista_noticias',
+         views.lista_noticias, name='lista_noticias'),
+
+
+    path('templates/noticias/listarturismo',
+         views.nombre_de_la_vista, name='listarturismo'),
+    path('templates/eventos/listareventos',
+         views.nombre_de_la_vista, name='listareventos'),
+
+    path('login/', auth.LoginView.as_view(template_name='usuarios/login.html'), name='login'),
+    path('logout/', auth.LogoutView.as_view(), name='logout'),
+
+
     # url de apps
     path('Noticias/', include('apps.noticias.urls')),
     #path('agregar_posteo/', include('apps.noticias.urls')),
-    path('Usuario/',include('apps.usuarios.urls')),
+    path('Usuario/', include('apps.usuarios.urls')),
     path('Eventos/', include('apps.eventos.urls')),
-
-    
-
-
 ]
-
-
