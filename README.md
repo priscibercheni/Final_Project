@@ -38,7 +38,7 @@ Proyecto final de la segunda etapa del Informatorio 2023.
 ## Screenshots
 
 **Página de Inicio**
-![App Screenshot](file:///C:/Users/PC/Documents/Lightshot/Screenshot_1.png)
+![App Screenshot]([file:///C:/Users/PC/Documents/Lightshot/Screenshot_1.png](https://raw.githubusercontent.com/priscibercheni/Final_Project/main/Screenshot_1.png))
 
 **Página para Loguearse**
 ![App Screenshot](file:///C:/Users/PC/Documents/Lightshot/Screenshot_2.png)
