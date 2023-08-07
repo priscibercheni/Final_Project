@@ -13,8 +13,7 @@
   background: pink; 
   background: url('/static/img/img.jpg.jpg') no-repeat;
   background-size: cover;
-  background-position: center;
-}
+  background-position: center;}
 
 .wrapper {
   width: 420xp;

@@ -11,9 +11,9 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libreria',
+        'NAME': 'proyectofinal',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '',
         'HOST': 'localhost',   # Puedes cambiarlo si tu base de datos está en un servidor remoto
         'PORT': '3306',            # El puerto de la base de datos (por defecto: 3306)
     }
