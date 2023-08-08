@@ -35,7 +35,6 @@ LOGIN_URL = reverse_lazy('login')
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,8 +46,6 @@ INSTALLED_APPS = [
     'apps.noticias',
     'apps.eventos',
     'ckeditor',
-
-
 ]
 
 MIDDLEWARE = [
@@ -130,3 +127,4 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),'static'),)
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

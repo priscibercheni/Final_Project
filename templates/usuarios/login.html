@@ -1,7 +1,39 @@
 {% extends 'basetemplate.html' %}
 
 {% block contenido %}
-			<!-- <form method="POST" class="container" style=" width: 60vw;   height: 80vh;margin-top: 40px;">{%csrf_token%}
+
+<div class="login">
+	<div class="wrapper">
+		<form method="POST">
+			{%csrf_token%}
+			{{form.errors}}
+
+			<h1>Login</h1>
+			<div class="input-box">
+				<input name="username" type="pass" placeholder="Username" required>
+				<box-icon type='solid' name='user'></box-icon>
+			</div>
+			<div class="input-box">
+				<input name="password" type="password" placeholder="Password" required>
+				<box-icon type='solid' name='user'></box-icon>
+			</div>
+
+			<div class="remember-forgot">
+				<label><input type="checkbox">Remember me</label>
+				<a href="#">Forgot password?</a>
+			</div>
+
+			<button type="sumbit" class="btn">Login</button>
+
+			<div class="register-link">
+				<p>Don't have an account? <a href="{% url 'usuarios:registro' %}">Register</a></p>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
+
+<!-- <form method="POST" class="container" style=" width: 60vw;   height: 80vh;margin-top: 40px;">{%csrf_token%}
 				{{form.errors}}
 				<label class="form-label mt-5" for="username">Usuario:</label>
 				<input class="form-control" type="text" name="username" placeholder="USUARIO">
@@ -10,32 +42,3 @@
 
 				<input class="btn btn-primary my-3" type="submit" name="" value="ENVIAR">
 			</form> -->
-
-		<div class="login">
-			<div class="wrapper">
-				<form method="POST">{%csrf_token%}
-				{{form.errors}}
-				<h1>Login</h1>
-				<div class="input-box">
-					<input type="pass" placeholder="Username" required>
-					<box-icon type='solid' name='user'></box-icon>
-				</div>
-				<div class="input-box">
-					<input type="password" placeholder="Password" required>
-					<box-icon type='solid' name='user'></box-icon>
-				</div>
-
-				<div class="remember-forgot">
-					<label><input type="checkbox">Remember me</label>
-					<a href="#">Forgot password?</a>
-				</div>
-
-				<button type="sumbit" class="btn">Login</button>
-
-				<div class="register-link" >
-					<p>Don't have an account? <a href="{% url 'usuarios:registro' %}">Register</a></p>
-				</div>
-			</form>
-		</div>
-	</div>	
-{% endblock %}

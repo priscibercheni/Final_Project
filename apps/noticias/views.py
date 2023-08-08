@@ -29,6 +29,17 @@ def listar_NoticiasTurismo(request):
     post_ordenados = posts.order_by('-fecha')
     return render(request, 'noticias/listarturismo.html', { 'post_noticias': post_ordenados})
 
+
+
+
+
+
+
+
+
+
+
+
 @login_required  
 def post_detail(request,pk):
     post=Post.objects.get(id=pk)
@@ -36,7 +47,7 @@ def post_detail(request,pk):
     comments=Comment.objects.filter(post=post).order_by("-pk")
     
     if request.method == 'POST':
-            cf=CommentForm(request.POST or None)
+            cf=CommentForm(request.POST)
             if cf.is_valid():
                 content=request.POST.get('content')
                 comment=Comment.objects.create(post=post,user=request.user,content=content)
@@ -45,14 +56,27 @@ def post_detail(request,pk):
     else:
         cf=CommentForm()
         
+        
     context={
             'titulo': 'Post Details',
             'comments':comments,
             'ied':ied,
-            'object':post,
+            'post':post,
             'comment_form':cf
     }
-    return render(request,'noticias/detallenoticias.html',context)
+    return render(request,'noticias/noticia.html',context)
+
+
+
+
+
+
+
+
+
+
+
+
 
 @login_required
 def deletecomment(request, id):
